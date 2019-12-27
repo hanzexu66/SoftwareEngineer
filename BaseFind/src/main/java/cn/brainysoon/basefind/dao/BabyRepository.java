@@ -1,12 +1,14 @@
 package cn.brainysoon.basefind.dao;
 
 import cn.brainysoon.basefind.Model.Baby;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by brainy on 17-6-2.
  */
+
 public interface BabyRepository {
 
     /**
@@ -28,5 +30,5 @@ public interface BabyRepository {
     /**
      * @return
      */
-    List<Baby> queryBaby();
+    List<Baby> queryBaby(String BabyClass);
 }

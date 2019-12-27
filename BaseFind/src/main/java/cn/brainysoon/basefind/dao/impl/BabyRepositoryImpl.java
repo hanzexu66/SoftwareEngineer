@@ -3,8 +3,10 @@ package cn.brainysoon.basefind.dao.impl;
 import cn.brainysoon.basefind.Model.Baby;
 import cn.brainysoon.basefind.dao.BabyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -14,7 +16,7 @@ import java.util.List;
 /**
  * Created by brainy on 17-6-2.
  */
-@Repository
+@Repository @Component
 public class BabyRepositoryImpl implements BabyRepository, RowMapper<Baby> {
 
     private static final String BABY_ID = "BabyId";
@@ -78,8 +80,8 @@ public class BabyRepositoryImpl implements BabyRepository, RowMapper<Baby> {
                 baby.getBabyFindPhone());
     }
 
-    public List<Baby> queryBaby() {
-
-        return jdbcOperations.query(QUERY_BABY_BASE_LONG_LAT_CIRCLE, this);
+    public List<Baby> queryBaby(String BabyClass) {
+        String sql="SELECT * FROM baby WHERE BabyFindMark<0 AND BabySlead>0 and BabyClass like '%"+BabyClass+"%' or BabyName like '%"+BabyClass+"%'";
+        return jdbcOperations.query(sql, this);
     }
 }

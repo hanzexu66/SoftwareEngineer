@@ -2,9 +2,7 @@ package cn.brainysoon.popfind.model;
 
 import java.util.Date;
 
-/**
- * Created by brainy on 17-6-2.
- */
+
 public class Baby {
 
     private String babyId;

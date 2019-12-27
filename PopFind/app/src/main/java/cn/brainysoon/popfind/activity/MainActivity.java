@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
 
     private OkHttpClient client = new OkHttpClient();
 
-    private static final String DEFAULT_URL_ADD_BABY = "http://www.coolbhu.cn:8080/addbaby";
-    private static final String DEFAULT_URL_FIND_BABY = "http://www.coolbhu.cn:8080/findbaby";
+    private static final String DEFAULT_URL_ADD_BABY = "http://192.168.43.130:8080/q/addbaby";
+    private static final String DEFAULT_URL_FIND_BABY = "http://192.168.43.130:8080/q/findbaby";
 
     //进度条的 Dialog
     private MaterialDialog progressDialog = null;
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
 
         //text
         String textCircle = textFindCircle.getText().toString().trim();
-
+        String textClass=textFindClass.getText().toString().trim();
         if (textCircle.equals("")) {
 
             textCircle = "1000";
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
 
         //拼接url
         String url = DEFAULT_URL_FIND_BABY + "?Long=" + searchLatlon.longitude +
-                "&Lat=" + searchLatlon.latitude + "&Circle=" + textCircle;
+                "&Lat=" + searchLatlon.latitude + "&Circle=" + textCircle+ "&BabyClass="+textClass;
 
         //出现进度条
         MaterialDialog.Builder builder = new MaterialDialog.Builder(MainActivity.this);
@@ -356,7 +356,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource,
                                     InputType.TYPE_CLASS_TEXT
                                             | InputType.TYPE_TEXT_VARIATION_PERSON_NAME
                                             | InputType.TYPE_TEXT_FLAG_CAP_WORDS)
-                            .inputRange(2, 16)
+                            .inputRange(1, 16)
                             .positiveText(R.string.positive_text)
                             .input(
                                     R.string.baby_key_text_hint,

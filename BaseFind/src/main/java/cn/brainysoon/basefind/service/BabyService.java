@@ -15,7 +15,7 @@ public interface BabyService {
      * @param Circle
      * @return
      */
-    List<Baby> getBabysByLongLatAndCircle(Double Long, Double Lat, Double Circle);
+    List<Baby> getBabysByLongLatAndCircle(Double Long, Double Lat, Double Circle,String BabyClass);
 
     int addBaby(String babyname, String babyclass, String passsecret, String secretkey, String findphone, Double babylong, Double babylat);
 }

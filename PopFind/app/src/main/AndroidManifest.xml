@@ -25,7 +25,7 @@
         <!--高德地图开发key-->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="7acbba3d4c740afc398e36518108489c" />
+            android:value="15c614da077e7b6f7120d137afe65224" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -12,6 +12,8 @@ import android.view.WindowManager;
 import com.amap.api.maps.model.Marker;
 
 
+
+
 public class SensorEventHelper implements SensorEventListener {
 
 	private SensorManager mSensorManager;

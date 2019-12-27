@@ -26,13 +26,14 @@ public class BabyController {
     @RequestMapping(value = "findbaby", method = RequestMethod.GET)
     public List<Baby> findBaby(@RequestParam(value = "Long") Double Long,
                                @RequestParam(value = "Lat") Double Lat,
-                               @RequestParam(value = "Circle") Double Circle) {
+                               @RequestParam(value = "Circle") Double Circle,
+    @RequestParam(value="BabyClass") String BabyClass ){
 
-        return babyService.getBabysByLongLatAndCircle(Long, Lat, Circle);
+        return babyService.getBabysByLongLatAndCircle(Long, Lat, Circle,BabyClass);
     }
 
     @RequestMapping(value = "addbaby", method = RequestMethod.POST)
-    public Map addBaby(@RequestParam(value = "babyname") String babyname,
+    public Map<String,Integer> addBaby(@RequestParam(value = "babyname") String babyname,
                        @RequestParam(value = "babyclass") String babyclass,
                        @RequestParam(value = "passsecret") String passsecret,
                        @RequestParam(value = "secretkey") String secretkey,
@@ -40,7 +41,7 @@ public class BabyController {
                        @RequestParam(value = "babylong") Double babylong,
                        @RequestParam(value = "babylat") Double babylat) {
 
-        Map map = new HashMap();
+        Map<String,Integer> map = new HashMap<String, Integer>();
 
         map.put("result", babyService.addBaby(babyname, babyclass, passsecret, secretkey, findphone, babylong, babylat));
 

@@ -22,10 +22,10 @@ public class BabyServiceImpl implements BabyService {
     private BabyRepository babyRepository;
 
     @Override
-    public List<Baby> getBabysByLongLatAndCircle(Double Long, Double Lat, Double Circle) {
-        List<Baby> babies = babyRepository.queryBaby();
+    public List<Baby> getBabysByLongLatAndCircle(Double Long, Double Lat, Double Circle,String BabyClass) {
+        List<Baby> babies = babyRepository.queryBaby(BabyClass);
 
-        List<Baby> result = new ArrayList<>();
+        List<Baby> result = new ArrayList<Baby>();
 
         for (Baby baby : babies) {
 

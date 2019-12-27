@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">寻找宝贝</string>
+    <string name="app_name">一起找</string>
 
     <!--Menu-->
     <string name="menu_title_find">寻找丢失宝贝</string>
@@ -10,12 +10,12 @@
     <string name="negative_text">取消</string>
 
     <!--Hint String-->
-    <string name="baby_name_text_hint">宝贝名称</string>
-    <string name="baby_class_text_hint">宝贝分类</string>
-    <string name="baby_secret_text_hint">秘密问题</string>
-    <string name="baby_key_text_hint">秘密答案</string>
+    <string name="baby_name_text_hint">物品名称</string>
+    <string name="baby_class_text_hint">关键词</string>
+    <string name="baby_secret_text_hint">问题</string>
+    <string name="baby_key_text_hint">答案</string>
     <string name="baby_finder_phone_text_hint">我的号码</string>
-    <string name="baby_search_circle">搜索半径（1000）</string>
+    <string name="baby_search_circle">搜索半径（默认1000）</string>
     <string name="err_hint">请输入完整信息！</string>
     <string name="progress_hint">正在请求。。。</string>
     <string name="progress_title">请求</string>
